@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .scene {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: #87CEEB; /* Couleur ciel */
+        }
+
+        .ground {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            height: 20vh;
+            background-color: #2E8B57; /* Couleur sol */
+        }
+
+        .bike {
+            position: absolute;
+            bottom: 20vh;
+            left: 20vw;
+            width: 80px;
+            height: 40px;
+            background-color: #333; /* Couleur cadre */
+            border-radius: 5px;
+            animation: bikeMove 4s linear infinite;
+        }
+
+        .wheel {
+            position: absolute;
+            bottom: 0;
+            width: 40px;
+            height: 40px;
+            background-color: #000; /* Couleur roue */
+            border-radius: 50%;
+            animation: wheelRotate 2s linear infinite;
+        }
+
+        .handlebar {
+            position: absolute;
+            top: 15vh;
+            left: 20vw;
+            width: 60px;
+            height: 5px;
+            background-color: #000; /* Couleur guidon */
+            transform-origin: 100% 50%;
+            animation: handlebarMove 4s linear infinite;
+        }
+
+        .saddle {
+            position: absolute;
+            top: 10vh;
+            left: 40vw;
+            width: 20px;
+            height: 30px;
+            background-color: #333; /* Couleur selle */
+            border-radius: 5px;
+        }
+
+        .pedal {
+            position: absolute;
+            bottom: 5px;
+            width: 10px;
+            height: 20px;
+            background-color: #000; /* Couleur pédale */
+            border-radius: 5px;
+            animation: pedalMove 1s linear infinite;
+        }
+
+        @keyframes bikeMove {
+            0% {
+                left: 20vw;
+            }
+            50% {
+                left: 60vw;
+            }
+            100% {
+                left: 20vw;
+            }
+        }
+
+        @keyframes wheelRotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes handlebarMove {
+            0% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(30deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        @keyframes pedalMove {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(180deg);
+            }
+        }
+    </style>
+    <title>Bike Animation</title>
+</head>
+<body>
+    <div class="scene">
+        <div class="ground"></div>
+        <div class="bike">
+            <div class="wheel" style="left: 0;"></div>
+            <div class="wheel" style="left: 60px;"></div>
+            <div class="handlebar"></div>
+            <div class="saddle"></div>
+            <div class="pedal" style="left: 15px;"></div>
+            <div class="pedal" style="left: 55px;"></div>
+        </div>
+    </div>
+</body>
+</html>
